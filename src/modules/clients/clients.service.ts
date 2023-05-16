@@ -11,11 +11,11 @@ export class ClientsService {
     @InjectRepository(Client) private clientRepository: Repository<Client>,
   ) {}
 
-  getAll() {
+  getClients() {
     return this.clientRepository.find();
   }
 
-  async getOne(id: number) {
+  async getClientById(id: number) {
     const client = await this.clientRepository.findOne({
       where: {
         id,

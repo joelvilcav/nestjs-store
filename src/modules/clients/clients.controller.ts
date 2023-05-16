@@ -19,12 +19,12 @@ export class ClientsController {
 
   @Get()
   getClients(): Promise<Client[]> {
-    return this.clientsService.getAll();
+    return this.clientsService.getClients();
   }
 
   @Get('/:id')
   getClientById(@Param('id', ParseIntPipe) id: number) {
-    return this.clientsService.getOne(id);
+    return this.clientsService.getClientById(id);
   }
 
   @Post()
